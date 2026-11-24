@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
-body {
-  font-family: 'IBM Plex Mono', monospace;
-}
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; font-family: "IBM Plex Mono", monospace; }
+::selection { background: #ff5c35; color: white; }
+.hero-glow { background: radial-gradient(circle at 72% 36%, rgba(255,92,53,.32), transparent 32%), radial-gradient(circle at 18% 8%, rgba(98,61,255,.2), transparent 30%); }
+.grid-pattern { background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
+.section-label { color: #ff5c35; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.project-card { box-shadow: 0 1px 0 rgba(0,0,0,.03); transition: transform .35s ease, box-shadow .35s ease; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 24px 70px rgba(16,16,16,.12); }
+.link-underline { position: relative; }
+.link-underline::after { content: ""; position: absolute; inset: auto 0 -4px; height: 2px; background: #ff5c35; transform: scaleX(.25); transform-origin: left; transition: transform .25s ease; }
+.link-underline:hover::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
